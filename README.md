@@ -1,10 +1,10 @@
 # CS 510 Assignment 6
 
-**Author:** Brandon Nguyen
+**Author:** Brandon Nguyen  
 **Course:** CS 510 Programming Language Concepts, Spring 2026  
 
 ## Overview
-This is a terminal-based Library Manager application written in Rust. It kinda sucks but ¯\_(ツ)_/¯
+This is a terminal-based Library Manager application written in Rust. It kinda sucks but ¯\\\_(ツ)\_/¯
 
 ---
 
