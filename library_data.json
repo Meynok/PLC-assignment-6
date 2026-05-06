@@ -1,0 +1,22 @@
+[
+  {
+    "library_item_name": "The Rust Programming Language",
+    "library_item_isbn": "978-1593278281",
+    "library_item_author": {
+      "first_name": "Steve",
+      "last_name": "Klabnik"
+    },
+    "library_item_published_date": "2018-05-01T00:00:00Z",
+    "library_item_status": "Available"
+  },
+  {
+    "library_item_name": "Really Cool Book",
+    "library_item_isbn": "LEON-KENNEDY-2469",
+    "library_item_author": {
+      "first_name": "Capcom",
+      "last_name": "Japan"
+    },
+    "library_item_published_date": "1977-07-31T00:00:00Z",
+    "library_item_status": "Available"
+  }
+]
