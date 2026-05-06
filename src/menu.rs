@@ -134,13 +134,17 @@ fn item_details_menu(run: &mut bool, input: &mut String, library: &mut Library, 
         println!("| Author: {:<45} |", author_str.chars().take(45).collect::<String>());
         
         println!("| ISBN: {:<47} |", item.library_item_isbn.chars().take(47).collect::<String>());
+        
+        let date_str = item.library_item_published_date.format("%Y-%m-%d").to_string();
+        println!("| Published: {:<42} |", date_str.chars().take(42).collect::<String>());
+        
         println!("| Status: {:<45} |", status_str);
         println!("|                                                       |");
         println!("|-------------------------------------------------------|");
         println!("| [1]: Edit Item Status                                 |");
         println!("| [b]: Go Back                                          |");
         println!("| [q]: Exit Program                                     |");
-        for _ in 0..7 {
+        for _ in 0..6 {
             println!("|                                                       |");
         }
         println!("|-------------------------------------------------------|");
