@@ -1,46 +1,90 @@
-use std::{io::{self, Write}, ptr::null};
-use std::process::Command;
+use crate::utils;
+use crate::library_manager;
 
-fn clear_terminal() {
-    if cfg!(target_os = "windows") {
-        Command::new("cmd").args(["/c", "cls"]).status().unwrap();
-    } else {
-        Command::new("clear").status().unwrap();
-    }
-}
-
-fn receive_input() -> String {
-    let mut input = String::new();
-    io::stdout()
-            .flush()
-            .expect("Failed to flush stdout");
-
-    input.clear();
-
-    io::stdin()
-        .read_line(&mut input)
-        .expect("Failed to read input.");
-
-    return input;
-}
-
-pub fn test_print() {
+pub fn main_menu() {
     let mut input: String = String::new();
     let mut run: bool = true;
+
     while run {
-        clear_terminal();
+        utils::clear_terminal();
         println!("|-------------------------------------------------------|");
         println!("|                     Main Menu                         |");
         println!("|-------------------------------------------------------|");
         println!("| [1]: View Library                                     |");
         println!("| [2]: Add Library Item                                 |");
-        println!("| [3]: Edit Library Item                                |");
-        println!("| [q]: exit program                                     |");
+        println!("| [q]: Exit Program                                     |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
         println!("|-------------------------------------------------------|");
         print!("Enter Choice: ");
+        
+        utils::receive_input(&mut input);
 
-        input = receive_input();
+        match input.trim() {
+            "1" => {
+                library_menu(&mut run, &mut input);
+            }
+            "q" => {
+                run = false;
+            }
+            _ => {
+                println!("Invalid Choice. Press enter to try again.");
+                utils::receive_input(&mut input);
+            }
+        }
+    }
+}
 
-        if input.trim() == "q" {run = false}
+fn library_menu(run: &mut bool, input: &mut String) {
+    while *run {
+        utils::clear_terminal();
+        println!("|-------------------------------------------------------|");
+        println!("|                        Library                        |");
+        println!("|-------------------------------------------------------|");
+        println!("| [1]: Previous Page                                    |");
+        println!("| [2]: Next Page                                        |");
+        println!("| [q]: Exit Program                                     |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|                                                       |");
+        println!("|-------------------------------------------------------|");
+        print!("Enter Choice: ");
+        
+        utils::receive_input(input);
+
+        match input.trim() {
+            "q" => {
+                *run = false;
+            }
+            _ => {
+                println!("Invalid Choice. Press enter to try again.");
+                utils::receive_input(input);
+            }
+        }
     }
 }

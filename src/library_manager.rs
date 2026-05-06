@@ -12,6 +12,6 @@ pub struct LibraryItem {
     library_item_published_date: DateTime<Utc>,
 }
 
-pub fn get_library_item(library_item: &LibraryItem) -> &LibraryItem {
+fn get_library_item(library_item: &LibraryItem) -> &LibraryItem {
     return library_item;
 }

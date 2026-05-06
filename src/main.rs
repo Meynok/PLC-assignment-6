@@ -1,8 +1,9 @@
 mod library_manager;
 mod menu;
+mod utils;
 
-use menu::test_print;
+use menu::main_menu;
 
 fn main() {
-    test_print();
+    main_menu();
 }
