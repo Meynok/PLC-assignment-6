@@ -100,8 +100,8 @@ fn library_menu(run: &mut bool, input: &mut String, library: &mut Library) {
             val => {
                 if let Ok(num) = val.parse::<usize>() {
                     if num > 0 && num <= (end_index - start_index) {
-                        let actual_idx = start_index + num - 1;
-                        item_details_menu(run, input, library, actual_idx);
+                        let actual_index = start_index + num - 1;
+                        item_details_menu(run, input, library, actual_index);
                     } else {
                         println!("Invalid Selection. Press enter to try again.");
                         utils::receive_input(input);
